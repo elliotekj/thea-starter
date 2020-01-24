@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block meta %}
+<meta name="author" content="{{ globals.author }}">
+<link rel="canonical" href="{{ globals.base_url }}{{ page.slug }}">
+{% endblock meta %}
+
+{% block title %}
+{{ page.fm.title }}
+{% endblock title %}
+
+{% block content %}
+<h2>{{ page.fm.title }}</h2>
+<span>Published: {{ page.fm.date | date(format="%d-%m-%Y") }}</span>
+{{ page.content | safe }}
+{% endblock content %}

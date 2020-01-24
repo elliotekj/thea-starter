@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}{{ page.fm.title }}{% endblock title %}
+        {% if page.slug != "/" %}&nbsp;|&nbsp;{% endif %}
+        {{ globals.title }}
+    </title>
+
+    <meta name="description" content="{{ globals.desc }}">
+
+    <link rel="alternate" type="application/rss+xml" title="{{ globals.title }}" href="/rss.xml">
+    <link rel="sitemap" type="application/xml" href="{{ globals.base_url }}/sitemap.xml">
+    <link rel="stylesheet" href="{{ globals.base_url }}/assets/styles.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ globals.base_url }}/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ globals.base_url }}/static/favicon-16x16.png">
+
+    {% block meta %}{% endblock meta %}
+</head>
+<body>
+    <header>
+        <h1>{{ globals.title }}</h2>
+
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/rss.xml">RSS</a></li>
+                <li><a href="/sitemap.xml">Sitemap</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {{ page.content | safe }}
+        {% endblock content %}
+    </main>
+
+    <footer>
+        <div class="container">
+            © 2020 {{ globals.author }}. Powered by <a href="https://github.com/elliotekj/thea">thea</a>.
+        </div>
+    </footer>
+</body>
+</html>
+

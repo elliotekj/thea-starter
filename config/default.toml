@@ -1,0 +1,21 @@
+[[content.page_types]]
+type = "post"
+path = "posts"
+default_layout = "blogpost.html"
+
+[[content.page_types]]
+type = "page"
+path = "pages"
+default_layout = "base.html"
+
+[[content.page_types]]
+type = "asset"
+path = "assets"
+default_layout = "raw.html"
+
+[templates.globals]
+base_url = "http://127.0.0.1:3030"
+title = "Thea Starter Template"
+desc = "Just a fairly barebones starter template."
+author = "Elliot Jackson"
+email = "elliot@elliotekj.com"

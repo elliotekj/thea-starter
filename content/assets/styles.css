@@ -1,0 +1,35 @@
+---
+slug: "/assets/styles.css"
+---
+
+body {
+    background: lightgray;
+}
+
+.pre-filename {
+    font-family: monospace;
+}
+
+pre {
+    background: #fff;
+    padding: 0.5rem 0;
+}
+
+pre .line {
+    padding: 0.25rem 1rem;
+}
+
+pre .line-highlight {
+    background: silver;
+}
+
+pre .line-nb {
+    color: gray;
+    display: inline-block;
+    text-align: center;
+    width: 2rem;
+}
+
+pre .line-highlight .line-nb {
+    color: white;
+}

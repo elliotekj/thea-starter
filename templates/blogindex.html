@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% set sorted_posts = pages | filter(attribute="page_type", value="post") | sort(attribute="fm.date") | reverse  %}
+
+<h2>Archive</h2>
+
+<ul>
+{% for post in sorted_posts %}
+    <li>
+        <span>{{ post.fm.date | date(format="%d-%m-%Y") }} </span>
+        <a href="{{ post.slug }}">{{ post.fm.title }}</a>
+    </li>
+{% endfor %}
+</ul>
+{% endblock content %}
